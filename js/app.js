@@ -287,13 +287,13 @@ let lima = {
 };
 
 seattle.getSales();
-tokyo.getSales();
-dubai.getSales();
-paris.getSales();
-lima.getSales();
 seattle.render();
+tokyo.getSales();
 tokyo.render();
+dubai.getSales();
 dubai.render();
+paris.getSales();
 paris.render();
+lima.getSales();
 lima.render();
 
