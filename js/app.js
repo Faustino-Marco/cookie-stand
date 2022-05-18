@@ -2,8 +2,8 @@
 
 // GLOBAL VARIABLES
 let shopSection = document.getElementById('Shops');
-let tableBody = document.getElementById('tablebody');
 let tableHeader = document.getElementById('tablehead');
+let tableBody = document.getElementById('tablebody');
 
 // ***** HELPER FUNCTION - GENERATE A RANDOM NUMBER *****
 // got from mdn docs
@@ -47,6 +47,7 @@ cookieStore.prototype.getSales = function () {
     this.totalSales = sum(this.totalSales, hourlySales);
     this.salesArr.push(hourlySales);
     }
+  }
     //********************************************** */
     // *** RENDER TABLE HEADER ***
     let renderTableHeader = function () {
@@ -65,9 +66,9 @@ cookieStore.prototype.getSales = function () {
       let totalth = document.createElement('th');
       newRowElem.appendChild(totalth);
       totalth.textContent = 'Total';
+    
     }
     renderTableHeader();
-}
 //***************************************** */
 // *** RENDER MAIN DATA POINTS (TABLE BODY) ***
 cookieStore.prototype.render = function () {
