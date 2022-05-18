@@ -11,11 +11,6 @@ function randomCustomers(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-// multiply function
-function multiply(a, b) {
-  return (a * b);
-};
-
 // sum function
 function sum(a, b) {
   return (a + b);
