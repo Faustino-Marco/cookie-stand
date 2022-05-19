@@ -2,8 +2,9 @@
 
 // GLOBAL VARIABLES
 let shopSection = document.getElementById('Shops');
-let tableHeader = document.getElementById('tablehead');
+let tableHead = document.getElementById('tablehead');
 let tableBody = document.getElementById('tablebody');
+let tableFoot = document.getElementById('tablefoot');
 
 // ***** HELPER FUNCTION - GENERATE A RANDOM NUMBER *****
 // got from mdn docs
@@ -41,14 +42,43 @@ cookieStore.prototype.getSales = function () {
     let hourlySales = Math.floor(randomCustomers(this.minCust, this.maxCust) * this.AvgCookiesPerSale);
     this.totalSales = sum(this.totalSales, hourlySales);
     this.salesArr.push(hourlySales);
-    }
   }
+}
+
+// *** RENDER MAIN DATA POINTS (TABLE BODY) ***
+cookieStore.prototype.render = function () {
+      this.getSales();
+      let newRowElem = document.createElement('tr');
+      tableBody.appendChild(newRowElem);
+      // td city
+      let tdCityElem = document.createElement('td');
+      tdCityElem.textContent = `${this.location}`;
+      newRowElem.appendChild(tdCityElem);
+      // td ... sales
+      for (let i = 0; i < businessHours.length; i++) {
+        let tdElem = document.createElement('td');
+        newRowElem.appendChild(tdElem);
+        tdElem.textContent = `${this.salesArr[i]}`;
+      }
+      // td total
+      let tdElem = document.createElement('td');
+      newRowElem.appendChild(tdElem);
+      tdElem.textContent = this.totalSales;
+    }
     //********************************************** */
+    // INSTANTIATE INTERNATIONAL STORES
+    new cookieStore('Seattle', 23, 65, 6.3);
+    new cookieStore('Tokyo', 3, 24, 1.2);
+    new cookieStore('Dubai', 11, 38, 3.7);
+    new cookieStore('Paris', 20, 38, 2.3);
+    new cookieStore('Lima', 2, 16, 4.6);
+
     // *** RENDER TABLE HEADER ***
     let renderTableHeader = function () {
       // row
       let newRowElem = document.createElement('tr');
-      tableHeader.appendChild(newRowElem);
+      tableHead.appendChild(newRowElem);
+      // empty top left td
       let emptyth = document.createElement('th');
       newRowElem.appendChild(emptyth);
       // hours elements
@@ -64,35 +94,48 @@ cookieStore.prototype.getSales = function () {
     
     }
     renderTableHeader();
-//***************************************** */
-// *** RENDER MAIN DATA POINTS (TABLE BODY) ***
-cookieStore.prototype.render = function () {
-  this.getSales();
-  let newRowElem = document.createElement('tr');
-  tableBody.appendChild(newRowElem);
-  // td city
-  let tdCityElem = document.createElement('td');
-  tdCityElem.textContent = `${this.location}`;
-  newRowElem.appendChild(tdCityElem);
-  // td ... sales
-  for (let i = 0; i < businessHours.length; i++) {
-    let tdElem = document.createElement('td');
-    newRowElem.appendChild(tdElem);
-    tdElem.textContent = `${this.salesArr[i]}`;
-  }
-  // td total
-  let tdElem = document.createElement('td');
-  newRowElem.appendChild(tdElem);
-  tdElem.textContent = this.totalSales;
- 
-}
 
-// INSTANTIATE INTERNATIONAL STORES
-new cookieStore('Seattle', 23, 65, 6.3);
-new cookieStore('Tokyo', 3, 24, 1.2);
-new cookieStore('Dubai', 11, 38, 3.7);
-new cookieStore('Paris', 20, 38, 2.3);
-new cookieStore('Lima', 2, 16, 4.6);
+//***************************************** */
+// TABLE FOOTER (TOTALS) DATA
+
+let totalArray = []
+let grandTotal = 0
+let getHourlyTotals = function () {
+  for (let i = 0; i < businessHours.length; i++) {
+  let hourlyTotal = 0;
+    for (let j = 0; j < internationalStores.length; j++) {
+    hourlyTotal += internationalStores[j].salesArr[i];
+  }
+  totalArray.push(hourlyTotal);
+  grandTotal = sum(grandTotal, hourlyTotal)
+  // console.log(hourlyTotal);
+}
+}
+getHourlyTotals();
+// console.log(totalArray);
+
+// RENDER TABLE FOOTER
+console.log(grandTotal);
+let renderTableFooter = function () {
+  // row
+  let newRowElem = document.createElement('tr');
+  tableFoot.appendChild(newRowElem);
+  // Total bottom left td
+  let totalBL = document.createElement('th');
+  totalBL.textContent = 'Total';
+  newRowElem.appendChild(totalBL);
+  // hours elements
+  for (let i = 0; i < businessHours.length; i++) {
+    let tableHeadElem = document.createElement('td');
+    newRowElem.appendChild(tableHeadElem);
+    tableHeadElem.textContent = totalArray[i];
+  }
+  let totalth = document.createElement('th');
+  newRowElem.appendChild(totalth);
+  totalth.textContent = grandTotal;
+}
+    renderTableFooter();
+// ****************************************
 
 
 
