@@ -136,7 +136,16 @@ let renderTableFooter = function () {
 }
     renderTableFooter();
 // ****************************************
-
+//  EVENT FOR FORM SUBMISSION
+// STEP 1: Grab the element to listen to
+let myForm = document.getElementById('my-form');
+// STEP 3: define our handler
+function handleSubmit(event) {
+  event.preventDefault();
+  console.log('I am submitted');
+}
+// STEP 2: Attach a listener - 2 arg(event, f(x))
+myForm.addEventListener('submit', handleSubmit);
 
 
 // HELPER FUNCTION
