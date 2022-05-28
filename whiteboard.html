@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  
+  
+  <main>
+    <h2>International Stores</h2>
+    <form id="my-form">
+      <fieldset>
+        <legend>Give Fieldset Context</legend>
+        <label for="Full Name">Full Name</label>
+        <input id="fullName" type="text" name="fullName">
+        <!-- event.target.fullName.value -->
+        <!-- nest input in label -->
+        <label>Age
+          <input type="Number" name="age">
+          <!-- event.target.age.value -->
+        </label>
+        <label for="teams">Favorite NFL Team
+        </label>
+        <select name="teams" id="teams">
+          <option value="seahawks">Seahawks</option>
+          <option value="49ers">49ers</opttion>
+            <option value="vikings">Vikings</option>
+          </select>
+          <button type="submit">Submit</button>
+        </fieldset>
+        <fieldset>
+      <legend>New Store Data</legend>
+      <label for="City">City</label>
+      <input id="city" type="text" name="newCityName">
+      <label>New Min Cust
+        <input type="Number" name="newMinCust">
+      </label>
+      <label>New Max Cust
+        <input type="Number" name="newMaxCust">
+      </label>
+      <label>Average Cookies per Sale
+        <input type="Number" name="newAvgSale">
+      </label>
+    </fieldset>
+  </form>
+  </main>
+  
+</body>
+</html>

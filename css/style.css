@@ -1,51 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+
 body {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   background-color: #2a9d8f;
+  width: 80%; 
+  margin: auto;
 }
 
 h1 {
   color: #e9c46a;
   text-justify: center;
   text-align: center;
-  font-size: 45px;
+  font-size: 24px;
   /* margin-top: 30px; */
+  width: 100%;
+  margin: auto;
 }
 
 header {
   background-color: #264653;
   height: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
+#family {
+  height: 100px;
+  width: 150px;
+}
+
+#chinook {
+  height: 100px;
+  width: 150px;
+}
+
+#cutter {
+  height: 100px;
+  width: 150px;
+}
+
+#fish {
+  height: 100px;
+  width: 150px;
+}
+
+#frosted-cookie {
+  height: 100px;
+  width: 150px;
+}
+
+#shirt {
+  height: 100px;
+  width: 150px;
+} 
+
 nav {
-  width: 960px;
+  width: 100%;
   margin: auto;
+  justify-content: space-between;
+  font-family: 'Montserrat', sans-serif;
+  color:#e76f51;
 }
 
 nav img {
   float: left;
   margin-top: 15px;
   margin-right: 10px;
+  height: 20px;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-around;
 }
 
 nav ul li {
-  margin-top: 40px;
+  margin-top: 10px;
+  margin-right: 20px;
 }
 
 a {
   text-decoration: none;
   color: #e9c46a;
+  display: block;
+  font-size: 12px;
 }
 
-main {
-  width: 960px;
+/* main {
+  height: 250px;
+  width: 100%;
   margin: auto;
-}
+} */
 
 main ul {
   display: flex;
@@ -57,27 +100,26 @@ main ul {
 
 
 section {
-	display: flex;
-	justify-content: space-between;
-	margin-bottom: 30px;
   background-color: #e76f51;
+  width: 100%;
+  margin: auto;
 }
 
 section article {
-	margin-left: 30px;
+	margin: auto;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 12px;
   margin-bottom: 10px;
   color: #264653;
   background-color: #e76f51;
   width: 100%;
 }
 
-p {
-  height: 300px;
-  overflow: auto;
+#foot-p {
+  height: 10px;
+  font-size: 20px;
 }
 
 button {
@@ -92,7 +134,7 @@ button:hover {
 }
 
 footer {
-	height: 150px;
+	height: 50px;
 	background-color: #264653;
   color:#e9c46a;
 }
@@ -104,12 +146,35 @@ footer ul {
 footer ul li {
   float: left;
   height: 5px;
-  width: 100px;
+  width: 50px;
 }
 
-footer p {
-  height: 150px;
+/* footer p {
+  height: 75px;
   width: 150px;
   justify-content: space-around;
   display: flex;
+} */
+address {
+  font-size: 16px;
+}
+table {
+  height: 100px;
+  width: 50%;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+table, td, th {
+  border: 1px solid black;
+  font-size: 8px;
+}
+
+#table {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+article p {
+  font-size: 8px;
 }
