@@ -5,6 +5,7 @@ let shopSection = document.getElementById('Shops');
 let tableHead = document.getElementById('tablehead');
 let tableBody = document.getElementById('tablebody');
 let tableFoot = document.getElementById('tablefoot');
+let myForm = document.getElementById('my-Form');
 
 // ***** HELPER FUNCTION - GENERATE A RANDOM NUMBER *****
 // got from mdn docs
@@ -136,306 +137,27 @@ let renderTableFooter = function () {
 }
     renderTableFooter();
 // ****************************************
-//  EVENT FOR FORM SUBMISSION
-// STEP 1: Grab the element to listen to
-let myForm = document.getElementById('my-form');
-// STEP 3: define our handler
+//            click handle
+// ****************************************
+
 function handleSubmit(event) {
   event.preventDefault();
-  console.log('I am submitted');
+
+  let location = event.target.location.value;
+  let minCust = +event.target.minCust.value;
+  let maxCust = +event.target.maxCust.value;
+  let AvgCookiesPerSale = +event.target.AvgCookiesPerSale.value;
+
+  let newStore = new cookieStore(location, minCust, maxCust, AvgCookiesPerSale);
+
+  document.getElementById('tablefoot').remove();
+  // newStore.render();
+
+  renderTableFooter();
 }
-// STEP 2: Attach a listener - 2 arg(event, f(x))
+
+// ****************************************
+//            click listen
+// ****************************************
+
 myForm.addEventListener('submit', handleSubmit);
-
-
-// HELPER FUNCTION
-// function renderAllStores() {
-//   for(let i = 0; i <businessHours.length; i++) {
-//     internationalStores[i].render();
-//   }
-// }
-
-// function renderAllTableRows() {
-//   for(let i = 0; i <businessHours.length; i++) {
-//     internationalStores[i].getSales();
-//     internationalStores[i].renderTable();
-//   }
-// }
-
-
-// renderAllStores();
-// renderAllTableRows();
-
-// OBJECT LITERALS
-
-// let seattle = {
-//   location: 'Seattle',
-//   hourlySales: 0,
-//   minCust: 23,
-//   maxCust: 65,
-//   AvgCookiesPerSale: 6.3,
-//   salesArr: [],
-//   totalSales: 0,
-//   // hourlyCustomers: 0,
-//   photo: '#',
-//   getSales: function () {
-//     for (let i = 0; i < businessHours.length; i++) {
-//     let hourlySales = Math.floor(randomCustomers(this.minCust, this.maxCust) * this.AvgCookiesPerSale);
-//     this.totalSales = sum(this.totalSales, hourlySales);
-//     this.salesArr.push(hourlySales);
-//     // console.log(hourlySales);
-//     // console.log(randomCustomers(23, 65));
-//     }
-//   },
-//   render: function() {
-//     // article
-//     let articleElem = document.createElement('article');
-//     shopSection.appendChild(articleElem);
-//     // h2
-//     let h2Elem = document.createElement('h2');
-//     h2Elem.textContent = this.location;
-//     articleElem.appendChild(h2Elem);
-//     // p
-//     let pElem = document.createElement('p');
-//     pElem.textContent = `${this.location} has an avg CPC of ${this.AvgCookiesPerSale} per hour;`;
-//     articleElem.appendChild(pElem);
-//     // ul
-//     let ulElem = document.createElement('ul');
-//     pElem.appendChild(ulElem);
-//     // li
-//     for (let i = 0; i < businessHours.length; i++) {
-//       let liElem = document.createElement('li');
-//       ulElem.appendChild(liElem);
-//       liElem.textContent = `${businessHours[i]}: ${this.salesArr[i]}`;
-//     }
-//     let liElem = document.createElement('li')
-//     ulElem.appendChild(liElem);
-//     liElem.textContent = `Total Sales: ${this.totalSales}`;
-//     // total li
-    
-
-//     let imgElem = document.createElement('img');
-//     imgElem.src = this.photo;
-//     imgElem.alt = `${this.location} is beautiful`;
-//     articleElem.appendChild(imgElem);
-//   }
-// };
-// let tokyo = {
-//   location: 'Tokyo',
-//   hourlySales: 0,
-//   minCust: 3,
-//   maxCust: 24,
-//   AvgCookiesPerSale: 1.2,
-//   salesArr: [],
-//   totalSales: 0,
-//   // hourlyCustomers: 0,
-//   photo: '#',
-//   getSales: function () {
-//     for (let i = 0; i < businessHours.length; i++) {
-//     let hourlySales = Math.floor(randomCustomers(this.minCust, this.maxCust) * this.AvgCookiesPerSale);
-//     this.totalSales = sum(this.totalSales, hourlySales);
-//     this.salesArr.push(hourlySales);
-//     // console.log(hourlySales);
-//     // console.log(randomCustomers(23, 65));
-//     }
-//   },
-//   render: function() {
-//     // article
-//     let articleElem = document.createElement('article');
-//     shopSection.appendChild(articleElem);
-//     // h2
-//     let h2Elem = document.createElement('h2');
-//     h2Elem.textContent = this.location;
-//     articleElem.appendChild(h2Elem);
-//     // p
-//     let pElem = document.createElement('p');
-//     pElem.textContent = `${this.location} has an avg CPC of ${this.AvgCookiesPerSale} per hour;`;
-//     articleElem.appendChild(pElem);
-//     // ul
-//     let ulElem = document.createElement('ul');
-//     pElem.appendChild(ulElem);
-//     // li
-//     for (let i = 0; i < businessHours.length; i++) {
-//       let liElem = document.createElement('li');
-//       ulElem.appendChild(liElem);
-//       liElem.textContent = `${businessHours[i]}: ${this.salesArr[i]}`;
-//     }
-//     let liElem = document.createElement('li')
-//     ulElem.appendChild(liElem);
-//     liElem.textContent = `Total Sales: ${this.totalSales}`;
-//     // total li
-    
-
-//     let imgElem = document.createElement('img');
-//     imgElem.src = this.photo;
-//     imgElem.alt = `${this.location} is beautiful`;
-//     articleElem.appendChild(imgElem);
-//   }
-// };
-// let dubai = {
-//   location: 'Dubai',
-//   hourlySales: 0,
-//   minCust: 11,
-//   maxCust: 38,
-//   AvgCookiesPerSale: 3.7,
-//   salesArr: [],
-//   totalSales: 0,
-//   // hourlyCustomers: 0,
-//   photo: '#',
-//   getSales: function () {
-//     for (let i = 0; i < businessHours.length; i++) {
-//     let hourlySales = Math.floor(randomCustomers(this.minCust, this.maxCust) * this.AvgCookiesPerSale);
-//     this.totalSales = sum(this.totalSales, hourlySales);
-//     this.salesArr.push(hourlySales);
-//     // console.log(hourlySales);
-//     // console.log(randomCustomers(23, 65));
-//     }
-//   },
-//   render: function() {
-//     // article
-//     let articleElem = document.createElement('article');
-//     shopSection.appendChild(articleElem);
-//     // h2
-//     let h2Elem = document.createElement('h2');
-//     h2Elem.textContent = this.location;
-//     articleElem.appendChild(h2Elem);
-//     // p
-//     let pElem = document.createElement('p');
-//     pElem.textContent = `${this.location} has an avg CPC of ${this.AvgCookiesPerSale} per hour;`;
-//     articleElem.appendChild(pElem);
-//     // ul
-//     let ulElem = document.createElement('ul');
-//     pElem.appendChild(ulElem);
-//     // li
-//     for (let i = 0; i < businessHours.length; i++) {
-//       let liElem = document.createElement('li');
-//       ulElem.appendChild(liElem);
-//       liElem.textContent = `${businessHours[i]}: ${this.salesArr[i]}`;
-//     }
-//     let liElem = document.createElement('li')
-//     ulElem.appendChild(liElem);
-//     liElem.textContent = `Total Sales: ${this.totalSales}`;
-//     // total li
-    
-
-//     let imgElem = document.createElement('img');
-//     imgElem.src = this.photo;
-//     imgElem.alt = `${this.location} is beautiful`;
-//     articleElem.appendChild(imgElem);
-//   }
-// };
-// let paris = {
-//   location: 'Paris',
-//   hourlySales: 0,
-//   minCust: 20,
-//   maxCust: 38,
-//   AvgCookiesPerSale: 2.3,
-//   salesArr: [],
-//   totalSales: 0,
-//   // hourlyCustomers: 0,
-//   photo: '#',
-//   getSales: function () {
-//     for (let i = 0; i < businessHours.length; i++) {
-//     let hourlySales = Math.floor(randomCustomers(this.minCust, this.maxCust) * this.AvgCookiesPerSale);
-//     this.totalSales = sum(this.totalSales, hourlySales);
-//     this.salesArr.push(hourlySales);
-//     // console.log(hourlySales);
-//     // console.log(randomCustomers(23, 65));
-//     }
-//   },
-//   render: function() {
-//     // article
-//     let articleElem = document.createElement('article');
-//     shopSection.appendChild(articleElem);
-//     // h2
-//     let h2Elem = document.createElement('h2');
-//     h2Elem.textContent = this.location;
-//     articleElem.appendChild(h2Elem);
-//     // p
-//     let pElem = document.createElement('p');
-//     pElem.textContent = `${this.location} has an avg CPC of ${this.AvgCookiesPerSale} per hour;`;
-//     articleElem.appendChild(pElem);
-//     // ul
-//     let ulElem = document.createElement('ul');
-//     pElem.appendChild(ulElem);
-//     // li
-//     for (let i = 0; i < businessHours.length; i++) {
-//       let liElem = document.createElement('li');
-//       ulElem.appendChild(liElem);
-//       liElem.textContent = `${businessHours[i]}: ${this.salesArr[i]}`;
-//     }
-//     let liElem = document.createElement('li')
-//     ulElem.appendChild(liElem);
-//     liElem.textContent = `Total Sales: ${this.totalSales}`;
-//     // total li
-    
-
-//     let imgElem = document.createElement('img');
-//     imgElem.src = this.photo;
-//     imgElem.alt = `${this.location} is beautiful`;
-//     articleElem.appendChild(imgElem);
-//   }
-// };
-// let lima = {
-//   location: 'Lima',
-//   hourlySales: 0,
-//   minCust: 2,
-//   maxCust: 16,
-//   AvgCookiesPerSale: 4.6,
-//   salesArr: [],
-//   totalSales: 0,
-//   // hourlyCustomers: 0,
-//   photo: '#',
-//   getSales: function () {
-//     for (let i = 0; i < businessHours.length; i++) {
-//     let hourlySales = Math.floor(randomCustomers(this.minCust, this.maxCust) * this.AvgCookiesPerSale);
-//     this.totalSales = sum(this.totalSales, hourlySales);
-//     this.salesArr.push(hourlySales);
-//     // console.log(hourlySales);
-//     // console.log(randomCustomers(23, 65));
-//     }
-//   },
-//   render: function() {
-//     // article
-//     let articleElem = document.createElement('article');
-//     shopSection.appendChild(articleElem);
-//     // h2
-//     let h2Elem = document.createElement('h2');
-//     h2Elem.textContent = this.location;
-//     articleElem.appendChild(h2Elem);
-//     // p
-//     let pElem = document.createElement('p');
-//     pElem.textContent = `${this.location} has an avg CPC of ${this.AvgCookiesPerSale} per hour;`;
-//     articleElem.appendChild(pElem);
-//     // ul
-//     let ulElem = document.createElement('ul');
-//     pElem.appendChild(ulElem);
-//     // li
-//     for (let i = 0; i < businessHours.length; i++) {
-//       let liElem = document.createElement('li');
-//       ulElem.appendChild(liElem);
-//       liElem.textContent = `${businessHours[i]}: ${this.salesArr[i]}`;
-//     }
-//     let liElem = document.createElement('li')
-//     ulElem.appendChild(liElem);
-//     liElem.textContent = `Total Sales: ${this.totalSales}`;
-//     // total li
-    
-
-//     let imgElem = document.createElement('img');
-//     imgElem.src = this.photo;
-//     imgElem.alt = `${this.location} is beautiful`;
-//     articleElem.appendChild(imgElem);
-//   }
-// };
-
-// seattle.getSales();
-// seattle.render();
-// tokyo.getSales();
-// tokyo.render();
-// dubai.getSales();
-// dubai.render();
-// paris.getSales();
-// paris.render();
-// lima.getSales();
-// lima.render();
