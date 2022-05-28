@@ -148,12 +148,8 @@ function handleSubmit(event) {
   let maxCust = +event.target.maxCust.value;
   let AvgCookiesPerSale = +event.target.AvgCookiesPerSale.value;
 
-  let newStore = new cookieStore(location, minCust, maxCust, AvgCookiesPerSale);
+  new cookieStore(location, minCust, maxCust, AvgCookiesPerSale);
 
-  document.getElementById('tablefoot').remove();
-  // newStore.render();
-
-  renderTableFooter();
 }
 
 // ****************************************
