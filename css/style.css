@@ -62,27 +62,25 @@ header {
 } 
 
 nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   width: 100%;
-  margin: auto;
-  justify-content: space-between;
   font-family: 'Montserrat', sans-serif;
-  color:var(--color-coral);
+  color: var(--color-coral);
 }
 
 nav img {
-  float: left;
-  margin-top: 15px;
-  margin-right: 10px;
   height: 20px;
 }
 
 nav ul {
   display: flex;
+  gap: 20px;
 }
 
 nav ul li {
-  margin-top: 10px;
-  margin-right: 20px;
+  margin-top: 0;
 }
 
 a {
@@ -148,13 +146,15 @@ footer {
 }
 
 footer ul {
+  display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  padding: 8px 0;
 }
 
 footer ul li {
-  float: left;
-  height: 5px;
   width: 50px;
+  text-align: center;
 }
 
 /* footer p {
