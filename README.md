@@ -11,3 +11,4 @@ Salmon Cookies Project
 - ✅ QW-3: Fix form label mismatch in sales.html (`revamp/qw-3-fix-form-label`) — corrected label for="city" → for="location" to match input id
 - ✅ QW-4: Remove console.log from app.js (`revamp/qw-4-remove-consolelog`) — removed stray console.log(grandTotal) left from development
 - ✅ QW-5: Delete scratch files (`revamp/qw-5-remove-scratch-files`) — removed whiteboard.html and whiteboard.js from project root
+- ✅ QW-6: Add loading="lazy" to all images (`revamp/qw-6-lazy-loading`) — defers off-screen image loading across all pages
