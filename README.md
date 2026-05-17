@@ -1,6 +1,10 @@
 # cookie-stand
 Salmon Cookies Project
 
+## Version History
+- Version 2.0.0: Full revamp — ES6 class refactor, data/logic separation, Flexbox nav/footer, CSS variables, HTML/a11y fixes, form bug fixed (5/17/26)
+- Version 1.0.0: Initial submission
+
 ---
 
 ## Revamp Tracking (2026-05-17)
