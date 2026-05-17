@@ -5,6 +5,9 @@ Salmon Cookies Project
 
 ## Revamp Tracking (2026-05-17)
 
+### Deep Refactors
+- ✅ DEEP-12: Convert cookieStore to ES6 class (`revamp/deep-12-es6-class`) — rewritten as class CookieStore with constructor and methods; consistent camelCase naming
+
 ### Moderate
 - ✅ MOD-7: Fix broken HTML structure in index.html (`revamp/mod-7-fix-html-structure`) — added missing &lt;main&gt; tag, wrapped bare &lt;img&gt; in &lt;li&gt;
 - ✅ MOD-8: Extract color palette to CSS custom properties (`revamp/mod-8-css-variables`) — 5 brand colors in :root, all hex values replaced with var()
