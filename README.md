@@ -10,3 +10,4 @@ Salmon Cookies Project
 - ✅ QW-2: Fix duplicate id="foot-p" → class (`revamp/qw-2-fix-duplicate-ids`) — replaced 5 duplicate IDs with class="foot-p", updated CSS selector
 - ✅ QW-3: Fix form label mismatch in sales.html (`revamp/qw-3-fix-form-label`) — corrected label for="city" → for="location" to match input id
 - ✅ QW-4: Remove console.log from app.js (`revamp/qw-4-remove-consolelog`) — removed stray console.log(grandTotal) left from development
+- ✅ QW-5: Delete scratch files (`revamp/qw-5-remove-scratch-files`) — removed whiteboard.html and whiteboard.js from project root
