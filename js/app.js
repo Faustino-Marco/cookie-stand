@@ -63,12 +63,10 @@ class CookieStore {
   }
 }
 
-// INSTANTIATE INTERNATIONAL STORES
-new CookieStore('Seattle', 23, 65, 6.3);
-new CookieStore('Tokyo', 3, 24, 1.2);
-new CookieStore('Dubai', 11, 38, 3.7);
-new CookieStore('Paris', 20, 38, 2.3);
-new CookieStore('Lima', 2, 16, 4.6);
+// INSTANTIATE INTERNATIONAL STORES from data.js
+for (let store of storeData) {
+  new CookieStore(store.location, store.minCust, store.maxCust, store.avgCookiesPerSale);
+}
 
 // *** RENDER TABLE HEADER ***
 let renderTableHeader = function () {

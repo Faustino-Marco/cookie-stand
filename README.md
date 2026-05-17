@@ -7,6 +7,7 @@ Salmon Cookies Project
 
 ### Deep Refactors
 - ✅ DEEP-12: Convert cookieStore to ES6 class (`revamp/deep-12-es6-class`) — rewritten as class CookieStore with constructor and methods; consistent camelCase naming
+- ✅ DEEP-13: Extract store config data to data.js (`revamp/deep-13-store-data`) — store locations/ranges in js/data.js storeData array; app.js loops over it
 
 ### Moderate
 - ✅ MOD-7: Fix broken HTML structure in index.html (`revamp/mod-7-fix-html-structure`) — added missing &lt;main&gt; tag, wrapped bare &lt;img&gt; in &lt;li&gt;
