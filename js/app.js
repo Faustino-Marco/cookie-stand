@@ -116,7 +116,6 @@ getHourlyTotals();
 // console.log(totalArray);
 
 // RENDER TABLE FOOTER
-console.log(grandTotal);
 let renderTableFooter = function () {
   // row
   let newRowElem = document.createElement('tr');
