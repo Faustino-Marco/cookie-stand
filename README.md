@@ -9,6 +9,7 @@ Salmon Cookies Project
 - ✅ MOD-7: Fix broken HTML structure in index.html (`revamp/mod-7-fix-html-structure`) — added missing &lt;main&gt; tag, wrapped bare &lt;img&gt; in &lt;li&gt;
 - ✅ MOD-8: Extract color palette to CSS custom properties (`revamp/mod-8-css-variables`) — 5 brand colors in :root, all hex values replaced with var()
 - ✅ MOD-9: Replace float layout with Flexbox in nav and footer (`revamp/mod-9-flexbox-nav-footer`) — nav icon + links aligned with flex; footer locations evenly spaced with flex
+- ✅ MOD-10: Fix table footer not updating after form submission (`revamp/mod-10-fix-table-footer-update`) — recompute totals and re-render footer row on each new store addition
 
 ### Quick Wins
 - ✅ QW-1: Add meta tags and lang to index.html and sales.html (`revamp/qw-1-meta-tags`) — added charset, viewport, lang="en" to both pages

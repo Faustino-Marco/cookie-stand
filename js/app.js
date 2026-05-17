@@ -102,21 +102,23 @@ cookieStore.prototype.render = function () {
 let totalArray = []
 let grandTotal = 0
 let getHourlyTotals = function () {
+  totalArray = [];
+  grandTotal = 0;
   for (let i = 0; i < businessHours.length; i++) {
-  let hourlyTotal = 0;
+    let hourlyTotal = 0;
     for (let j = 0; j < internationalStores.length; j++) {
-    hourlyTotal += internationalStores[j].salesArr[i];
+      hourlyTotal += internationalStores[j].salesArr[i];
+    }
+    totalArray.push(hourlyTotal);
+    grandTotal = sum(grandTotal, hourlyTotal);
   }
-  totalArray.push(hourlyTotal);
-  grandTotal = sum(grandTotal, hourlyTotal)
-  // console.log(hourlyTotal);
-}
 }
 getHourlyTotals();
 // console.log(totalArray);
 
 // RENDER TABLE FOOTER
 let renderTableFooter = function () {
+  tableFoot.innerHTML = '';
   // row
   let newRowElem = document.createElement('tr');
   tableFoot.appendChild(newRowElem);
@@ -148,7 +150,8 @@ function handleSubmit(event) {
   let AvgCookiesPerSale = +event.target.AvgCookiesPerSale.value;
 
   new cookieStore(location, minCust, maxCust, AvgCookiesPerSale);
-
+  getHourlyTotals();
+  renderTableFooter();
 }
 
 // ****************************************
