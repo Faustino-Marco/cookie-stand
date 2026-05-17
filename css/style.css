@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
 
+:root {
+  --color-dark: #264653;
+  --color-teal: #2a9d8f;
+  --color-coral: #e76f51;
+  --color-yellow: #e9c46a;
+  --color-orange: #f4a261;
+}
+
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
-  background-color: #2a9d8f;
+  background-color: var(--color-teal);
   width: 80%; 
   margin: auto;
 }
 
 h1 {
-  color: #e9c46a;
+  color: var(--color-yellow);
   text-justify: center;
   text-align: center;
   font-size: 24px;
@@ -18,7 +26,7 @@ h1 {
 }
 
 header {
-  background-color: #264653;
+  background-color: var(--color-dark);
   height: 100px;
   margin-bottom: 10px;
 }
@@ -58,7 +66,7 @@ nav {
   margin: auto;
   justify-content: space-between;
   font-family: 'Montserrat', sans-serif;
-  color:#e76f51;
+  color:var(--color-coral);
 }
 
 nav img {
@@ -79,7 +87,7 @@ nav ul li {
 
 a {
   text-decoration: none;
-  color: #e9c46a;
+  color: var(--color-yellow);
   display: block;
   font-size: 12px;
 }
@@ -95,12 +103,12 @@ main ul {
   justify-content: space-between;
   margin-top: 30px;
   margin-bottom: 30px;
-  background-color: #e76f51;
+  background-color: var(--color-coral);
 }
 
 
 section {
-  background-color: #e76f51;
+  background-color: var(--color-coral);
   width: 100%;
   margin: auto;
 }
@@ -112,8 +120,8 @@ section article {
 h2 {
   font-size: 12px;
   margin-bottom: 10px;
-  color: #264653;
-  background-color: #e76f51;
+  color: var(--color-dark);
+  background-color: var(--color-coral);
   width: 100%;
 }
 
@@ -130,13 +138,13 @@ button {
 }
 
 button:hover {
-  background-color: #f4a261;
+  background-color: var(--color-orange);
 }
 
 footer {
 	height: 50px;
-	background-color: #264653;
-  color:#e9c46a;
+	background-color: var(--color-dark);
+  color:var(--color-yellow);
 }
 
 footer ul {

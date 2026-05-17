@@ -7,6 +7,7 @@ Salmon Cookies Project
 
 ### Moderate
 - ✅ MOD-7: Fix broken HTML structure in index.html (`revamp/mod-7-fix-html-structure`) — added missing &lt;main&gt; tag, wrapped bare &lt;img&gt; in &lt;li&gt;
+- ✅ MOD-8: Extract color palette to CSS custom properties (`revamp/mod-8-css-variables`) — 5 brand colors in :root, all hex values replaced with var()
 
 ### Quick Wins
 - ✅ QW-1: Add meta tags and lang to index.html and sales.html (`revamp/qw-1-meta-tags`) — added charset, viewport, lang="en" to both pages
