@@ -7,7 +7,26 @@ Salmon Cookies Project
 
 ---
 
+## Next Up
+
+### Visual Overhaul (pending — pick up here next session)
+
+All 13 code quality items are done. The one remaining track is a **comprehensive visual redesign** — this is a holistic pass, not item-by-item, and should be done on a single branch (`revamp/visual-redesign`).
+
+Specific problems to fix:
+- Images on the homepage sit on a flat coral bar with no card treatment (no border-radius, no shadow)
+- All body text in `<article>` is `font-size: 8px` and headings are `font-size: 12px` — unreadably small
+- Sales table is `width: 50%` for a 16-column table — cramped and hard to read
+- `footer { height: 50px }` is a fixed height that clips content
+- `body { width: 80% }` constrains the whole page instead of using a proper `max-width` container on `<main>`
+
+To continue: open Claude Code in this repo and run `/revamp`. Claude will detect the completed items and offer the visual overhaul as the next step. If it doesn't offer automatically, prompt: *"The 13 code quality items are done — proceed with the visual overhaul on a revamp/visual-redesign branch."*
+
+---
+
 ## Revamp Tracking (2026-05-17)
+
+All 13 items completed and merged to main. 13 PRs opened and squash-merged (#6–#18 + version bump #19).
 
 ### Deep Refactors
 - ✅ DEEP-12: Convert cookieStore to ES6 class (`revamp/deep-12-es6-class`) — rewritten as class CookieStore with constructor and methods; consistent camelCase naming
